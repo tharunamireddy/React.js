@@ -1,12 +1,15 @@
 import React from 'react'
+import './Home.css'
 import { useState,useEffect } from 'react'
 function Home() {
 
     const [count, setCount] = useState(0);
     const [name, setName] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
 
     useEffect(()=>{
         getData();
+        console.log(searchResults)
     },[name])
 
     const getData = async()=>{
@@ -15,7 +18,7 @@ function Home() {
         }
         const data = await fetch(`https://apis.ccbp.in/wiki-search?search=${name}`,options)
         const result = await data.json();
-        console.log(result)
+        setSearchResults(result.search_results);
     }
 
     const inc = () =>{
@@ -35,6 +38,16 @@ function Home() {
       <button onClick={()=>inc()}>+</button>
       <input onChange={(e)=>inp(e)} />
       <button>Add</button>
+
+      <ul>
+        {searchResults.map(i=> 
+            <div className='result'>
+                <li className='result-heading'>{i.title}</li>
+                <a href={i.link} className='result-link'>{i.link}</a>
+                <li className='result-description'>{i.description}</li>
+            </div>
+        )}
+      </ul>
     </div>
   )
 }

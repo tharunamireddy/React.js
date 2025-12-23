@@ -1,0 +1,12 @@
+.result{
+    list-style: none;
+    margin: 17px 0;
+}
+
+.result-heading{
+    color: rgb(75, 124, 75);
+    font-size: 27px;
+}
+.result-link{
+    color: rgb(32, 149, 238);
+}
