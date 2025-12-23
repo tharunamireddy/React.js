@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Counter.css'
 
 class Counter extends Component {
 
@@ -21,7 +22,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <h2>Counter Component</h2>
+        <h2 className='heading'>Counter Component</h2>
         <p>{this.state.counter}</p>
         <button onClick={this.dec}>-</button>
         <button onClick={this.re}>Reset</button>
