@@ -13,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/counter' element={<Counter/>}/>
+        {/* <Route path='/cart/:id' element={<ProductDetails/>}/> */}
         <Route path='/cart' element={<Cart/>}/>
       </Routes>
     </Router>

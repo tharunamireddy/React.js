@@ -3,6 +3,14 @@ import './Counter.css'
 
 class Counter extends Component {
 
+    componentDidMount(){
+        console.log('Mounted')
+    }
+
+    componentWillUnmount(){
+        console.log('Unmounted')
+    }
+
     state = {counter:0}
 
     inc =()=>{
