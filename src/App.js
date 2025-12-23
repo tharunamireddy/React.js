@@ -1,10 +1,13 @@
 import React from 'react'
+import Counter from './Components/Counter'
+import Navbar from './Components/Navbar'
 
 function App() {
   return (
-    <div>
-        <h1>Hello, World!</h1>
-    </div>
+    <>
+      <Navbar/>
+      <Counter/>
+    </>
   )
 }
 
